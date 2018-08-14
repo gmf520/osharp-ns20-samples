@@ -12,6 +12,11 @@ using Microsoft.Extensions.DependencyInjection;
 using OSharp.AspNetCore;
 using OSharp.AspNetCore.Mvc;
 using OSharp.Core.EntityInfos;
+using OSharp.Entity;
+using OSharp.Entity.MySql;
+using OSharp.Entity.SqlServer;
+using OSharp.Samples.MultipleDbContexts.Startups;
+
 
 namespace OSharp.Samples.MultipleDbContexts
 {
@@ -34,8 +39,14 @@ namespace OSharp.Samples.MultipleDbContexts
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            // 此示例不需要功能模块和数据实体模块，排除掉
-            services.AddOSharp<AspOsharpPackManager>(builder => builder.ExceptPack<MvcFunctionPack>().ExceptPack<EntityInfoPack>());
+            // 此示例只加载EF Core相关模块
+            services.AddOSharp<AspOsharpPackManager>(builder =>
+                builder.AddPack<EntityFrameworkCorePack>()
+                    .AddPack<SqlServerEntityFrameworkCorePack>()
+                    .AddPack<MySqlEntityFrameworkCorePack>()
+                    .AddPack<SqlServerMigrationPack>()
+                    .AddPack<MySqlMigrationPack>()
+            );
 
             services.AddHttpContextAccessor()
                 .AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
