@@ -5,13 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
-    <PackageReference Include="OSharpNS.AspNetCore" Version="0.3.0-beta10" />
-    <PackageReference Include="OSharpNS.AutoMapper" Version="0.3.0-beta10" />
-    <PackageReference Include="OSharpNS.EntityFrameworkCore.MySql" Version="0.3.0-beta10" />
-    <PackageReference Include="OSharpNS.EntityFrameworkCore.SqlServer" Version="0.3.0-beta10" />
-    <PackageReference Include="OSharpNS.Log4Net" Version="0.3.0-beta10" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.5" />
+    <PackageReference Include="OSharpNS" Version="0.3.0-beta12" />
+    <PackageReference Include="OSharpNS.AspNetCore" Version="0.3.0-beta12" />
+    <PackageReference Include="OSharpNS.AutoMapper" Version="0.3.0-beta12" />
+    <PackageReference Include="OSharpNS.EntityFrameworkCore.MySql" Version="0.3.0-beta12" />
+    <PackageReference Include="OSharpNS.EntityFrameworkCore.SqlServer" Version="0.3.0-beta12" />
+    <PackageReference Include="OSharpNS.Log4Net" Version="0.3.0-beta12" />
   </ItemGroup>
 
   <ItemGroup>

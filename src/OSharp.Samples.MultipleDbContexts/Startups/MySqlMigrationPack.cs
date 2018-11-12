@@ -17,7 +17,7 @@ namespace OSharp.Samples.MultipleDbContexts.Startups
     /// <summary>
     /// MySql迁移模块
     /// </summary>
-    public class MySqlMigrationPack : MySqlMigrationModuleBase<MySqlDbContext>
+    public class MySqlMigrationPack : MySqlMigrationPackBase<MySqlDbContext>
     {
         /// <summary>
         /// 获取 模块启动顺序，模块启动的顺序先按级别启动，级别内部再按此顺序启动，
