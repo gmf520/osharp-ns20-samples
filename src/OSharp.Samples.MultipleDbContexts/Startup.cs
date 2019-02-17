@@ -41,8 +41,7 @@ namespace OSharp.Samples.MultipleDbContexts
 
             // 此示例只加载EF Core相关模块
             services.AddOSharp<AspOsharpPackManager>(builder =>
-                builder.AddPack<EntityFrameworkCorePack>()
-                    .AddPack<SqlServerEntityFrameworkCorePack>()
+                builder.AddPack<SqlServerEntityFrameworkCorePack>()
                     .AddPack<MySqlEntityFrameworkCorePack>()
                     .AddPack<SqlServerMigrationPack>()
                     .AddPack<MySqlMigrationPack>()

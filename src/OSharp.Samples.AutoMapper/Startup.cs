@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
 using OSharp.AspNetCore;
-using OSharp.Samples.DependencyInjection.Controllers;
+using OSharp.AutoMapper;
 
 
-namespace OSharp.Samples.DependencyInjection
+namespace OSharp.Samples.AutoMapper
 {
     public class Startup
     {
@@ -17,7 +17,7 @@ namespace OSharp.Samples.DependencyInjection
         {
             services.AddOSharp<AspOsharpPackManager>(builder =>
             {
-                builder.AddPack<TestPack>();
+                builder.AddPack<AutoMapperPack>();
             });
             services.AddHttpContextAccessor().AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

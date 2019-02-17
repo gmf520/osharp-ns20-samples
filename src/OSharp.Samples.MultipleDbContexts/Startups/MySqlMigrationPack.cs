@@ -17,7 +17,7 @@ namespace OSharp.Samples.MultipleDbContexts.Startups
     /// <summary>
     /// MySql迁移模块
     /// </summary>
-    public class MySqlMigrationPack : MySqlMigrationPackBase<MySqlDbContext>
+    public class MySqlMigrationPack : MigrationPackBase<MySqlDbContext>
     {
         /// <summary>
         /// 获取 模块启动顺序，模块启动的顺序先按级别启动，级别内部再按此顺序启动，
@@ -29,5 +29,8 @@ namespace OSharp.Samples.MultipleDbContexts.Startups
         {
             return new MySqlDesignTimeDbContextFactory(scopedProvider).CreateDbContext(new string[0]);
         }
+
+        /// <summary>获取 数据库类型</summary>
+        protected override DatabaseType DatabaseType { get; } = DatabaseType.MySql;
     }
 }

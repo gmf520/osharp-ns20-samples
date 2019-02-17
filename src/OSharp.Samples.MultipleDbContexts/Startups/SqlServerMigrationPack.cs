@@ -17,7 +17,7 @@ namespace OSharp.Samples.MultipleDbContexts.Startups
     /// <summary>
     /// SqlServer迁移模块
     /// </summary>
-    public class SqlServerMigrationPack : SqlServerMigrationPackBase<SqlServerDbContext>
+    public class SqlServerMigrationPack : MigrationPackBase<SqlServerDbContext>
     {
         /// <summary>
         /// 获取 模块启动顺序，模块启动的顺序先按级别启动，级别内部再按此顺序启动，
@@ -29,5 +29,8 @@ namespace OSharp.Samples.MultipleDbContexts.Startups
         {
             return new SqlServerDesignTimeDbContextFactory(scopedProvider).CreateDbContext(new string[0]);
         }
+
+        /// <summary>获取 数据库类型</summary>
+        protected override DatabaseType DatabaseType { get; } = DatabaseType.SqlServer;
     }
 }
