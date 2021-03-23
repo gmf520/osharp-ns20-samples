@@ -24,7 +24,7 @@ namespace OSharp.Samples.DependencyInjection.Controllers
 
 
     interface ISingletonService1 { }
-
+    
     class SingletonService1 : ISingletonService1, ISingletonDependency { }
 
     interface IScopeService1 { }

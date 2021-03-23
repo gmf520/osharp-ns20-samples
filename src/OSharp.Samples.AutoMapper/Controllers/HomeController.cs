@@ -23,7 +23,7 @@ namespace OSharp.Samples.AutoMapper.Controllers
         {
             List<string> list = new List<string>();
 
-
+            list.Add("index");
 
 
 

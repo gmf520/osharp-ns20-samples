@@ -4,33 +4,46 @@
 //  </copyright>
 //  <site>http://www.osharp.org</site>
 //  <last-editor>郭明锋</last-editor>
-//  <last-date>2018-06-27 4:50</last-date>
+//  <last-date>2018-08-13 20:35</last-date>
 // -----------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+
+using OSharp.Core.Packs;
 using OSharp.Entity;
 using OSharp.Entity.MySql;
 using OSharp.Samples.MultipleDbContexts.Entity;
 
+
 namespace OSharp.Samples.MultipleDbContexts.Startups
 {
     /// <summary>
-    /// MySql迁移模块
+    /// MySql-DefaultDbContext迁移模块
     /// </summary>
-    public class MySqlMigrationPack : MigrationPackBase<MySqlDbContext>
+    [DependsOnPacks(typeof(MySqlEntityFrameworkCorePack))]
+    [Description("MySql-MySqlDbContext迁移模块")]
+    public class MySqlMySqlDbContextMigrationPack : MigrationPackBase<MySqlDbContext>
     {
         /// <summary>
-        /// 获取 模块启动顺序，模块启动的顺序先按级别启动，级别内部再按此顺序启动，
+        /// 获取 模块启动顺序，模块启动的顺序先按级别启动，同一级别内部再按此顺序启动，
         /// 级别默认为0，表示无依赖，需要在同级别有依赖顺序的时候，再重写为>0的顺序值
         /// </summary>
         public override int Order => 2;
 
+        /// <summary>
+        /// 获取 数据库类型
+        /// </summary>
+        protected override DatabaseType DatabaseType => DatabaseType.MySql;
+
+        /// <summary>
+        /// 重写实现获取数据上下文实例
+        /// </summary>
+        /// <param name="scopedProvider">服务提供者</param>
+        /// <returns></returns>
         protected override MySqlDbContext CreateDbContext(IServiceProvider scopedProvider)
         {
-            return new MySqlDesignTimeDbContextFactory(scopedProvider).CreateDbContext(new string[0]);
+            return new DesignTimeMySqlDbContextFactory(scopedProvider).CreateDbContext(new string[0]);
         }
-
-        /// <summary>获取 数据库类型</summary>
-        protected override DatabaseType DatabaseType { get; } = DatabaseType.MySql;
     }
 }

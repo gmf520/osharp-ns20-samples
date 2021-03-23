@@ -1,4 +1,4 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 //  <copyright file="SqlServerDefaultDbContextMigrationPack.cs" company="OSharp开源团队">
 //      Copyright (c) 2014-2018 OSharp. All rights reserved.
 //  </copyright>
@@ -8,16 +8,22 @@
 // -----------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+
+using OSharp.Core.Packs;
 using OSharp.Entity;
 using OSharp.Entity.SqlServer;
 using OSharp.Samples.MultipleDbContexts.Entity;
 
+
 namespace OSharp.Samples.MultipleDbContexts.Startups
 {
     /// <summary>
-    /// SqlServer迁移模块
+    /// SqlServer-DefaultDbContext迁移模块
     /// </summary>
-    public class SqlServerMigrationPack : MigrationPackBase<SqlServerDbContext>
+    [DependsOnPacks(typeof(SqlServerEntityFrameworkCorePack))]
+    [Description("SqlServer-SqlServerDbContext迁移模块")]
+    public class SqlServerSqlServerDbContextMigrationPack : MigrationPackBase<SqlServerDbContext>
     {
         /// <summary>
         /// 获取 模块启动顺序，模块启动的顺序先按级别启动，级别内部再按此顺序启动，
@@ -25,12 +31,14 @@ namespace OSharp.Samples.MultipleDbContexts.Startups
         /// </summary>
         public override int Order => 2;
 
+        /// <summary>
+        /// 获取 数据库类型
+        /// </summary>
+        protected override DatabaseType DatabaseType => DatabaseType.SqlServer;
+
         protected override SqlServerDbContext CreateDbContext(IServiceProvider scopedProvider)
         {
-            return new SqlServerDesignTimeDbContextFactory(scopedProvider).CreateDbContext(new string[0]);
+            return new DesignTimeSqlServerDbContextFactory(scopedProvider).CreateDbContext(new string[0]);
         }
-
-        /// <summary>获取 数据库类型</summary>
-        protected override DatabaseType DatabaseType { get; } = DatabaseType.SqlServer;
     }
 }

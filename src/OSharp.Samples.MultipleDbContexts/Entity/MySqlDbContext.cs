@@ -9,7 +9,7 @@ namespace OSharp.Samples.MultipleDbContexts.Entity
 {
     public class MySqlDbContext : DbContextBase
     {
-        public MySqlDbContext(DbContextOptions options, IEntityConfigurationTypeFinder typeFinder) : base(options, typeFinder)
+        public MySqlDbContext(DbContextOptions options, IServiceProvider serviceProvider) : base(options, serviceProvider)
         {
         }
     }
