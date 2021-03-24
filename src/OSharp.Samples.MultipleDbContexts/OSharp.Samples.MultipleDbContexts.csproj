@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="OSharpNS.AspNetCore" Version="5.0.4-preview324" />
     <PackageReference Include="OSharpNS.AutoMapper" Version="5.0.4-preview324" />
     <PackageReference Include="OSharpNS.EntityFrameworkCore.MySql" Version="5.0.4-preview324" />
