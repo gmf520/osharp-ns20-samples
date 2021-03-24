@@ -113,17 +113,17 @@
     "DbContexts": {
       "SqlServer": {
         "DbContextTypeName": "OSharp.Entity.DefaultDbContext,OSharp.EntityFrameworkCore",
-        "ConnectionString": "Server=localhost;Database=osharpns-samples-master;User Id=sa;Password=********;MultipleActiveResultSets=true",
+        "ConnectionString": "Server=localhost;Database=osharpns-samples.split-master;User Id=sa;Password=********;MultipleActiveResultSets=true",
         "Slaves": [
           {
             "Name": "Slave01",
             "Weight": 2,
-            "ConnectionString": "Server=localhost;Database=osharpns-samples-slave01;User Id=sa;Password=********;MultipleActiveResultSets=true"
+            "ConnectionString": "Server=localhost;Database=osharpns-samples.split-slave1;User Id=sa;Password=********;MultipleActiveResultSets=true"
           },
           {
             "Name": "Slave02",
             "Weight": 5,
-            "ConnectionString": "Server=localhost;Database=osharpns-samples-slave02;User Id=sa;Password=********;MultipleActiveResultSets=true"
+            "ConnectionString": "Server=localhost;Database=osharpns-samples.split-slave2;User Id=sa;Password=********;MultipleActiveResultSets=true"
           }
         ],
         "SlaveSelectorName": "Weight",
@@ -162,13 +162,13 @@ Done.
 PM> 
 ```
 
-没有出错的话，将自动创建主数据库`osharpns-samples-master`
+没有出错的话，将自动创建主数据库`osharpns-samples.split-master`
 
 ![](https://gitee.com/i66soft/blog-media/raw/master/osharp/20210324130228.png)
 
 ### 数据库主从配置
 
-分别创建名称为`osharpns-samples-slave01`，`osharpns-samples-slave02`的两个空数据库
+分别创建名称为`osharpns-samples.split-slave1`，`osharpns-samples.split-slave2`的两个空数据库
 
 ![image-20210324131223894](https://gitee.com/i66soft/blog-media/raw/master/osharp/image-20210324131223894.png)
 
