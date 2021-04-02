@@ -9,9 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OSharpNS.Log4Net" Version="5.0.4-preview324" />
-    <PackageReference Include="OSharpNS.AspNetCore" Version="5.0.4-preview324" />
-    <PackageReference Include="OSharpNS.Core" Version="5.0.4-preview324" />
+    <PackageReference Include="OSharpNS.Log4Net" Version="5.0.4" />
+    <PackageReference Include="OSharpNS.AspNetCore" Version="5.0.4" />
+    <PackageReference Include="OSharpNS.Core" Version="5.0.4" />
   </ItemGroup>
 
 </Project>

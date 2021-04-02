@@ -9,10 +9,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="OSharpNS.AspNetCore" Version="5.0.4-preview.324.1" />
-    <PackageReference Include="OSharpNS.AutoMapper" Version="5.0.4-preview.324.1" />
-    <PackageReference Include="OSharpNS.EntityFrameworkCore.SqlServer" Version="5.0.4-preview.324.1" />
-    <PackageReference Include="OSharpNS.Log4Net" Version="5.0.4-preview.324.1" />
+    <PackageReference Include="OSharpNS.AspNetCore" Version="5.0.4" />
+    <PackageReference Include="OSharpNS.AutoMapper" Version="5.0.4" />
+    <PackageReference Include="OSharpNS.EntityFrameworkCore.SqlServer" Version="5.0.4" />
+    <PackageReference Include="OSharpNS.Log4Net" Version="5.0.4" />
   </ItemGroup>
 
   <ItemGroup>
